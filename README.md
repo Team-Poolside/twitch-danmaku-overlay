@@ -4,7 +4,7 @@ Stream twitch chat to OBS in danmaku (bullet) format
 
 ## OBS Setup
 
-For convenience, we're hosting this on our site at <https://teampoolsi.de/danmaku>.
+For convenience, we're hosting this on our site at <https://teampoolsi.de/danmaku/>.
 To use this with OBS, simply add a new browser source and point it to this URL (see configuration options below).
 
 You can also clone this repository and host it locally using `npx serve` or similar.
@@ -23,20 +23,20 @@ To configure the behaviour of the overlay, the following URL parameters are supp
 
 ### Examples
 
-display <https://twitch.tv/teampoolsidotde> chat with default settings:
+display <https://twitch.tv/teampoolsidotde> chat with default settings (note that the trailing slash is necessary):
 
 ```
-https://teampoolsi.de/danmaku?channel=teampoolsidotde
+https://teampoolsi.de/danmaku/?channel=teampoolsidotde
 ```
 
 make messages take between 2 and 5 seconds to cross the screen:
 
 ```
-https://teampoolsi.de/danmaku?channel=teampoolsidotde&minDuration=2&maxDuration=5
+https://teampoolsi.de/danmaku/?channel=teampoolsidotde&minDuration=2&maxDuration=5
 ```
 
 make messages appear between 15% and 85% of screen height:
 
 ```
-https://teampoolsi.de/danmaku?channel=teampoolsidotde&top=15&bottom=85
+https://teampoolsi.de/danmaku/?channel=teampoolsidotde&top=15&bottom=85
 ```
