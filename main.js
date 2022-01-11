@@ -12,6 +12,7 @@ class Plugin extends Component {
   }
 
   componentDidMount() {
+    const ignoreList = this.props.ignore.split(",")
     this.client = new tmi.Client({
       channels: [this.props.channel]
     })
@@ -19,8 +20,10 @@ class Plugin extends Component {
     this.client.on('message', (channel, tags, message, self) => {
       // console.log(tags.emotes, message)
       const { messages } = this.state
-
-      !message.startsWith('!') && messages.push({
+      
+      !message.startsWith('!')
+      && !ignoreList.includes(tags.username)
+      && messages.push({
         color: tags.color || '#ffffff',
         position: Math.random() * (this.props.bottom - this.props.top) + this.props.top,
         duration: Math.random() * (this.props.maxDuration -this.props.minDuration) + this.props.minDuration,
@@ -71,7 +74,8 @@ render(
       minDuration=${parseInt(params.get('minDuration')) || 5}
       maxDuration=${parseInt(params.get('maxDuration')) || 10}
       top=${parseInt(params.get('top')) || 0}
-      bottom=${parseInt(params.get('bottom')) || 95} />
+      bottom=${parseInt(params.get('bottom')) || 95}
+      ignore=${params.get('ignore') || ""} />
   `,
   document.querySelector("#root")
 );
