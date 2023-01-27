@@ -20,6 +20,7 @@ To configure the behaviour of the overlay, the following URL parameters are supp
 | maxDuration | no        | 10            | seconds | the maximum amount of time it should take a bullet message to cross the screen |
 | top         | no        | 0             | CSS %   | the highest position on screen any bullet message should appear                |
 | bottom      | no        | 95            | CSS %   | the lowest position on screen any bullet message should appear                 |
+| ignore      | no        |               |         | the list of users's messages to ignore, comma (,) separated                    |
 
 ### Examples
 
